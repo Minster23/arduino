@@ -6,7 +6,7 @@
 #include <time.h>
 #include <Servo.h>
 
-Servo s1;
+Servo s1;  
 
 const char* AP_SSID = "ESP8266_AP";
 const char* AP_PASS = "12345678";
@@ -174,9 +174,9 @@ void connectToWiFi(const char* ssid, const char* password) {
 }
 
 void setup() {
+  s1.attach(0);
   Serial.begin(115200);
   LittleFS.begin();
-  s1.attach(0);
 
   WiFi.softAP(AP_SSID, AP_PASS);
   Serial.print("AP IP Address: ");
